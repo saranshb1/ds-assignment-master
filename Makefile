@@ -53,9 +53,12 @@ test:
 	@echo "Running all unit tests.."
 	${BINARIES}/nosetests --nologcapture
 
-run: clean data features train predict test
+run: 
+	data clean features train predict test
 
 clean:
 	@find . -name "*.pyc" -exec rm {} \;
 	@rm -f data/processed/* models/* submission/*;
+
+
 
